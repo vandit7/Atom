@@ -1,0 +1,23 @@
+<!-- <div class="container">
+    <h2 class="reactiveform">Product</h2>
+    <hr>
+</div> -->
+<div class="flex align-item-center justify-content-center flex-direction-column new-form">
+    <form [formGroup]="categoryFormGroup">
+        <div class="main-div">
+            <div class="field-name">
+                <p>Category Name</p>
+                <input type="text" name="name" formControlName="name" pInputText placeholder="Name" /><br>
+                <span *ngIf="name && name.invalid && name.touched" style="color: red;">Name field is required.</span>
+            </div>
+        </div>
+
+        <button *ngIf="updateDataId === null" type="submit" class="table-button"
+            (click)="addProduct()" [disabled]="categoryFormGroup.invalid">Add Category
+        </button>
+        <button *ngIf="updateDataId >= 0 && updateDataId !== null" type="submit"
+            class="table-button" (click)="updateProduct()">Update
+            Category
+        </button>
+    </form>
+</div>

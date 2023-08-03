@@ -1,0 +1,37 @@
+<div class="container">
+    <h2 class="reactiveform">Category</h2>
+    <hr>
+    <div class="flex justify-content-end" style="margin-bottom: 10px;">
+        <button class="table-button" routerLink="new-category">New</button>
+    </div>
+
+    <p-table [value]="categoryData" [tableStyle]="{ 'min-width': '30rem' }" class="table-main">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Name</th>
+                <th style="width: 100px;">Update</th>
+                <th style="width: 100px;">Delete</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-category>
+            <tr>
+                <td>{{category.name}}</td>
+                <td><p-button label="Update" styleClass="p-button-sm" (click)="updateProduct(category.id)"
+                        [routerLink]="'update-category/' + category.id"></p-button></td>
+                <td>
+                    <div class="card flex justify-content-center gap-2">
+                        <p-toast></p-toast>
+                        <p-confirmDialog [style]="{width: '50vw'}"></p-confirmDialog>
+                        <p-button (click)="confirm(category.id)" label="Delete" class="p-button-danger"
+                            styleClass="p-button-sm p-button-danger"></p-button>
+                    </div>
+                </td>
+            </tr>
+        </ng-template>
+        <div>
+            No
+        </div>
+    </p-table>
+</div>
+
+<router-outlet></router-outlet>

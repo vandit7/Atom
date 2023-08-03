@@ -1,0 +1,28 @@
+<!-- <div class="container">
+    <h2 class="reactiveform">Product</h2>
+    <hr>
+</div> -->
+<div class="flex align-item-center justify-content-center flex-direction-column new-form">
+    <form [formGroup]="productFormGroup">
+        <div class="main-div">
+            <div class="field-name">
+                <p>Product Name</p>
+                <input type="text" name="name" formControlName="name" pInputText placeholder="Name" /><br>
+                <span *ngIf="name && name.invalid && name.touched" style="color: red;">Name field is required.</span>
+            </div>
+            <div class="field-name">
+                <p>Product price</p>
+                <p-inputNumber inputId="integeronly" name="price" formControlName="price"
+                    placeholder="Price"></p-inputNumber><br>
+                <span *ngIf="price && price.invalid && price.touched" style="color: red;">Price field is
+                    required.</span>
+            </div>
+        </div>
+
+        <button *ngIf="updateDataId === null" type="submit" class="table-button" (click)="addProduct()"
+            [disabled]="productFormGroup.invalid">Add Product</button>
+        <button *ngIf="updateDataId >= 0 && updateDataId !== null" type="submit" class="table-button"
+            (click)="updateProduct()">Update
+            Product</button>
+    </form>
+</div>

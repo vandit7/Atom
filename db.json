@@ -1,0 +1,49 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "products": [
+    {
+      "name": "IMG-20220510-WA000119.jpg",
+      "price": 12344445,
+      "id": 1
+    },
+    {
+      "name": "232",
+      "price": 3232,
+      "id": 2
+    }
+  ],
+  "category": [
+    {
+      "name": "123456",
+      "id": 1
+    },
+    {
+      "name": "IMG-20220510-WA0009.jpg",
+      "id": 2
+    },
+    {
+      "name": "IMG-20220510-WA0009.jpg",
+      "id": 3
+    },
+    {
+      "name": "123",
+      "id": 4
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
